@@ -66,15 +66,15 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   host = 'swallow-sampleapp.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
-#  ActionMailer::Base.smtp_settings = {
-#    :address        => 'smtp.sendgrid.net',
-#    :port           => '587',
-#    :authentication => :plain,
-#    :user_name      => ENV['swallow321'],
-#    :password       => ENV['notouchme321'],
-#    :domain         => 'heroku.com',
-#    :enable_starttls_auto => true
-#  }
+  
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['gmail_username'],
+   :password             => ENV['gmail_password'],
+   :authentication       => "plain",
+   :enable_starttls_auto => true
+  }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true

@@ -18,7 +18,7 @@ Rails.application.configure do
   host = '192.168.187.128:3000'
   config.action_mailer.default_url_options = { host: host }
 
- =begin config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :smtp
  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
@@ -27,7 +27,16 @@ Rails.application.configure do
    :password             => ENV['gmail_password'],
    :authentication       => "plain",
    :enable_starttls_auto => true
-}=end
+  }
+
+#  ActionMailer::Base.smtp_settings = {
+#    :user_name => ENV['sendgrid_username'],
+#    :password => ENV['sendgrid_password'],
+#    :address => 'smtp.sendgrid.net',
+#    :port => 587,
+#    :authentication => :plain,
+#    :enable_starttls_auto => true
+#  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
