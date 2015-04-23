@@ -3,7 +3,7 @@
 #empty
 
 kch:
-  name: khc
+  name: kch
   email: kch@hotmail.com
   password_digest: <%= User.digest('notouchme') %>
   admin: true
